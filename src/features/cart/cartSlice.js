@@ -65,7 +65,6 @@ const cartSlice = createSlice({
       state.isLoading = true;
     },
     [getCartItems.fulfilled]: (state, action) => {
-      console.log(action);
       state.isLoading = false;
       state.cartItems = action.payload;
     },
@@ -74,9 +73,6 @@ const cartSlice = createSlice({
     },
   },
 });
-
-console.log("cartSlice", cartSlice);
-console.log("initialState", initialState);
 
 export const { clearCart, removeItem, increase, decrease, calculateTotals } =
   cartSlice.actions;
